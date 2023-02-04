@@ -31,7 +31,8 @@ object RetrofitModule {
         val httpClient = OkHttpClient.Builder().addInterceptor(logging)
         return Retrofit
             .Builder()
-            .baseUrl("https://food2fork.ca/api/receipe/")
+//            .baseUrl("https://abfood2fork.ca/api/")
+            .baseUrl("https://food2fork.ca")
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .client(httpClient.build())
 
