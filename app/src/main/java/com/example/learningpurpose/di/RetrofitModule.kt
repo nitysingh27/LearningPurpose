@@ -29,7 +29,9 @@ object RetrofitModule {
         val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
         val httpClient = OkHttpClient.Builder().addInterceptor(logging)
-        return Retrofit.Builder().baseUrl("https://food2fork.ca/")
+        return Retrofit
+            .Builder()
+            .baseUrl("https://food2fork.ca/api/receipe/")
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .client(httpClient.build())
 
